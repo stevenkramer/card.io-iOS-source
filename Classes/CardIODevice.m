@@ -48,18 +48,7 @@
 }
 
 + (BOOL)hasVideoCamera {
-  // check for a camera
-  if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-    return NO;
-  }
-  
-  // check for video support
-  NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
-  BOOL supportsVideo = [availableMediaTypes containsObject:(NSString *)kUTTypeMovie];
-  
-  // TODO: Should check AVCaptureDevice's supportsAVCaptureSessionPreset: for our preset.
-  
-  return supportsVideo;
+  return YES;
 }
 
 + (BOOL)shouldSetPixelFormat {
